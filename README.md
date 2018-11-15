@@ -87,13 +87,4 @@ If you enter `NO`, then Bamazon will part with a goodbye message and the connect
 
 ![Stop Shopping](images/goodbye.PNG)
 
-<style>
-h1,h2{
-    color: cyan;
-}
-
-h3,h4,h5{
-    color: lightblue;
-}
-
-</style>
+<style> h1,h2 {color: cyan;} h3,h4,h5 {color: lightblue; }</style>
