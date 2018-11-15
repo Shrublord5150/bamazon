@@ -14,7 +14,7 @@ var connection = mysql.createConnection({
     user: "root",
   
     // Your password--hide in gitignore/.env
-    password: "",
+    password: "root",
     database: "bamazon_db"
   });
   
@@ -28,7 +28,7 @@ var connection = mysql.createConnection({
 
 //   The app should then prompt users with two messages. ids, names, and prices of products for sale.
 function openStore () {
-    console.log("Here is what Bamazon has for sale".underline.blue)
+    console.log("\nHere is what Bamazon has for sale".blue.underline)
     connection.query("SELECT * FROM products", function(err, res) {
         for (var i = 0; i < res.length; i++) {
           console.log(res[i].item_id + " | " + res[i].product_name + " | " + res[i].price + " | " + res[i].stock_quantity);
@@ -88,8 +88,8 @@ function purchase () {
                 continueShopping();
             }
              else {
-                    console.log("Bamazon only has " + colors.red.underline(res[0].stock_quantity) + " " + (res[0].product_name).cyan + " in stock...")
-                    
+                    console.log("Sorry, your transaction cannot be completed. \nBamazon only has " + colors.red.underline(res[0].stock_quantity) + " " + (res[0].product_name).cyan + " in stock...")
+                    continueShopping();
         }
            
     })
@@ -103,22 +103,21 @@ function continueShopping () {
     .prompt([
         // prompt continue shopping question
         {   
-            name: "Continue",
+            name: "continue",
             type: "input",
-            message: "Would you like to continue shopping [yes] or [no]?",
-            validate: function(value) {
-                if (isNaN(value) === false) {
-                return true;
-
-                } else {
-                    console.log('\nPlease enter a valid ID.');
-                    return false;
-                }
-            }
+            message: "Would you like to continue shopping [YES] or [NO]?",
+            choices: ["YES", "NO"]
 
         },
-]).then(function(answers) {
-
-})
+        ]).then(function(answer) {
+        // based on their answer, either call the bid or the post functions
+        if (answer.continue.toUpperCase() === "YES") {
+            openStore();
+            }
+            else {
+            console.log("Thanks again for shopping with Bamazon! \nWe hope to see you again soon!".blue)
+            connection.end();
+            }
+    });
 
 }
