@@ -41,31 +41,29 @@ The first step in using Bamazon is to run the the `bamazonCustomer.js` file in y
 
 ![Running BamazonCustomer.js](images/run-node.PNG)
 
-Once the file is run, Bamazon will display the items availible to purchase in the terminal, as shown below.
+Once the file is run, Bamazon will display the items available to purchase in the terminal, as shown below.
 
 ![Store Inventory](images/after-run.PNG)
 
     NOTE: The Store display is a table divided into separate columns. The first column is the ID of the product. The Second is the name of the product. The third is the cost of the product.
 
-    The fourth column is the number of items availible for that particular product. Normally this would not be displayed; however, for the purposes of this markdown, we are displaying it for you.
+    The fourth column is the number of items available for that particular product. Normally this would not be displayed; however, for the purposes of this markdown, we are displaying it for you.
 
 ### Purchasing a Product
-After Bamazon displays the availible products, it will prompt you with a question of which product you would like to purchase.
+After Bamazon displays the available products, it will prompt you with a question of which product you would like to purchase.
 
 Simply enter in the `ID Number` of the product you would like to purchase, as shown below.
 
 ![Selecting a Product](images/enter-id.PNG)
 
-Once, a vailid Product ID is entered, Bamazon will prompt you with another question concerning the total number of the selected product you wish to purchase.
+Once a valid `Product ID` is entered, Bamazon will prompt you with another question concerning the total number of the selected product you wish to purchase.
 
 Simply enter in the total amount of products you wish to purchase, as shown below.
 
 ![Desired Amount](images/number-ordered.PNG)
 
 ### Purchase Complete
-If Bamazon has enough inventory to complete the purchase, the order will be completed.
-
-Bamazon will display a confirmation message with the total cost of the purchase, as shown below.
+If Bamazon has enough inventory to complete the purchase, Bamazon will display a confirmation message with the total cost of the purchase and the order will be completed, as shown below.
 
 ![Purchase Complete](images/purchase-complete.PNG)
 
@@ -81,7 +79,7 @@ If you enter `YES`, Bamazon will display a newly updated inventory table for you
 
 ![Continue Shopping](images/continue.PNG)
 
-    NOTE: The number of items availible for ID 7 has decreased by 2, since the order of 2 went through.
+    NOTE: The number of items available for ID 7 has decreased by 2, since the purchase of 2 of the products went through.
 
 If you enter `NO`, then Bamazon will part with a goodbye message and the connection to the Bamazon store will end, as shown below.
 
