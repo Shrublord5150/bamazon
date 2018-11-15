@@ -14,7 +14,7 @@ var connection = mysql.createConnection({
     user: "root",
   
     // Your password--hide in gitignore/.env
-    password: "root",
+    password: "",
     database: "bamazon_db"
   });
   
